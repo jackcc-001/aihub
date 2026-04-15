@@ -1,4 +1,5 @@
 // app/page.tsx
+export const dynamic = 'force-dynamic'
 // 首页，Server Component（相当于 Django 的 ListView）
 // searchParams 对应 Django 的 request.GET
 

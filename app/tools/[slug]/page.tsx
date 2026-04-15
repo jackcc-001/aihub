@@ -1,5 +1,6 @@
 // app/tools/[slug]/page.tsx
-// 工具详情页，相当于 Django 的 DetailView
+export const dynamic = 'force-dynamic'
+// 工具详情页
 // [slug] 是动态路由，对应 Django 的 <slug:slug>
 
 import { notFound } from 'next/navigation'

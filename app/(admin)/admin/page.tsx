@@ -1,4 +1,5 @@
 // app/(admin)/admin/page.tsx
+export const dynamic = 'force-dynamic'
 // 简单的管理后台，查看待审核工具提交
 // 生产环境建议加上密码保护（见下面的 middleware.ts 注释）
 
