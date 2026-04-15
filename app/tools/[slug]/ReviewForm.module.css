@@ -1,0 +1,54 @@
+/* app/tools/[slug]/ReviewForm.module.css */
+.form {
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 0.5px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.title { font-size: 15px; font-weight: 500; margin-bottom: 4px; }
+
+.stars { display: flex; gap: 4px; }
+.starOn, .starOff {
+  font-size: 24px;
+  background: none;
+  border: none;
+  padding: 0;
+  line-height: 1;
+  cursor: pointer;
+  transition: transform 0.1s;
+}
+.starOn { color: #EF9F27; }
+.starOff { color: #ddd; }
+.starOn:hover, .starOff:hover { transform: scale(1.2); }
+
+.input, .textarea {
+  width: 100%;
+  padding: 10px 14px;
+  border: 0.5px solid var(--border-hover);
+  border-radius: var(--radius-md);
+  font-size: 14px;
+  outline: none;
+  background: var(--bg-input);
+  color: var(--text);
+  resize: vertical;
+}
+.input:focus, .textarea:focus { border-color: #888; }
+
+.btn {
+  align-self: flex-start;
+  padding: 8px 20px;
+  background: var(--text);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-md);
+  font-size: 14px;
+  transition: background 0.15s;
+}
+.btn:hover:not(:disabled) { background: #333; }
+.btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.success { font-size: 14px; color: #0F6E56; margin-top: 16px; }
+.error { font-size: 13px; color: #993C1D; margin-top: 4px; }

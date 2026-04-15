@@ -1,0 +1,88 @@
+// prisma/schema.prisma
+// 对应 Django 里的 models.py
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")          // Neon 连接串
+  directUrl = env("DIRECT_URL")            // Neon 直连（migration用）
+}
+
+// 类似 Django 的 Category 模型
+model Category {
+  id          Int      @id @default(autoincrement())
+  name        String   @unique          // 写作助手 / 图像生成
+  slug        String   @unique          // writing / image
+  icon        String   @default("✦")
+  sort        Int      @default(0)      // 排序权重
+  tools       Tool[]
+  createdAt   DateTime @default(now())
+}
+
+// 核心：AI工具
+model Tool {
+  id          Int       @id @default(autoincrement())
+  name        String
+  slug        String    @unique
+  description String                    // 简短描述
+  detail      String?                   // 详细介绍（支持Markdown）
+  website     String                    // 官网链接
+  icon        String?                   // emoji 或图标URL
+  screenshot  String?                   // 截图URL
+  pricing     Pricing   @default(FREEMIUM)
+  rating      Float     @default(0)
+  ratingCount Int       @default(0)
+  viewCount   Int       @default(0)
+  featured    Boolean   @default(false) // 首页推荐
+  approved    Boolean   @default(false) // 管理员审核
+  tags        String[]                  // PostgreSQL 数组字段
+  categoryId  Int
+  category    Category  @relation(fields: [categoryId], references: [id])
+  reviews     Review[]
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  @@index([categoryId])
+  @@index([featured])
+  @@index([approved])
+}
+
+// 用户评分/评论
+model Review {
+  id        Int      @id @default(autoincrement())
+  toolId    Int
+  tool      Tool     @relation(fields: [toolId], references: [id], onDelete: Cascade)
+  nickname  String
+  rating    Int                         // 1-5
+  content   String?
+  createdAt DateTime @default(now())
+
+  @@index([toolId])
+}
+
+// 工具提交（待审核）
+model Submission {
+  id          Int      @id @default(autoincrement())
+  name        String
+  website     String
+  description String
+  category    String
+  email       String?                   // 提交者联系方式
+  status      Status   @default(PENDING)
+  createdAt   DateTime @default(now())
+}
+
+enum Pricing {
+  FREE
+  FREEMIUM
+  PAID
+}
+
+enum Status {
+  PENDING
+  APPROVED
+  REJECTED
+}

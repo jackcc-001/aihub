@@ -1,0 +1,59 @@
+/* app/submit/SubmitForm.module.css */
+.form { display: flex; flex-direction: column; gap: 18px; }
+
+.field { display: flex; flex-direction: column; gap: 6px; }
+.label { font-size: 13px; font-weight: 500; color: var(--text); }
+
+.input, .select, .textarea {
+  width: 100%;
+  padding: 10px 14px;
+  border: 0.5px solid var(--border-hover);
+  border-radius: var(--radius-md);
+  font-size: 14px;
+  outline: none;
+  background: #fff;
+  color: var(--text);
+}
+.input:focus, .select:focus, .textarea:focus { border-color: #888; }
+.textarea { resize: vertical; line-height: 1.6; }
+
+.btn {
+  padding: 10px 24px;
+  background: var(--text);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-md);
+  font-size: 14px;
+  font-weight: 500;
+  align-self: flex-start;
+  transition: background 0.15s;
+}
+.btn:hover:not(:disabled) { background: #333; }
+.btn:disabled { opacity: 0.5; cursor: not-allowed; }
+.error { font-size: 13px; color: #993C1D; }
+
+.success {
+  text-align: center;
+  padding: 40px 0;
+}
+.successIcon {
+  width: 52px; height: 52px;
+  background: #E1F5EE;
+  color: #0F6E56;
+  border-radius: 50%;
+  font-size: 22px;
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 16px;
+}
+.success h2 { font-size: 20px; font-weight: 500; margin-bottom: 8px; }
+.success p { font-size: 14px; color: var(--text-muted); margin-bottom: 20px; }
+.resetBtn {
+  padding: 8px 20px;
+  border: 0.5px solid var(--border-hover);
+  border-radius: var(--radius-md);
+  font-size: 14px;
+  background: none;
+  color: var(--text);
+  cursor: pointer;
+}
+.resetBtn:hover { background: #f0efe9; }

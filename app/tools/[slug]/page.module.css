@@ -1,0 +1,80 @@
+/* app/tools/[slug]/page.module.css */
+.wrapper {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.card {
+  background: #fff;
+  border: 0.5px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+}
+
+.toolHeader {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  margin-bottom: 16px;
+}
+
+.icon {
+  width: 52px;
+  height: 52px;
+  font-size: 26px;
+  background: #f0efe9;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.name { font-size: 22px; font-weight: 500; margin-bottom: 4px; }
+.category { font-size: 13px; color: var(--text-muted); }
+
+.visitBtn {
+  margin-left: auto;
+  padding: 8px 18px;
+  border: 0.5px solid var(--border-hover);
+  border-radius: var(--radius-md);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text);
+  transition: background 0.15s;
+  white-space: nowrap;
+}
+.visitBtn:hover { background: #f0efe9; }
+
+.desc { font-size: 15px; color: var(--text-muted); margin-bottom: 16px; line-height: 1.7; }
+
+.meta { display: flex; gap: 20px; flex-wrap: wrap; margin-bottom: 14px; }
+.metaItem { font-size: 13px; color: var(--text-muted); }
+.metaItem strong { color: var(--text); }
+
+.tags { display: flex; gap: 6px; flex-wrap: wrap; }
+.tag {
+  font-size: 12px;
+  padding: 3px 10px;
+  background: #f0efe9;
+  border-radius: 99px;
+  color: var(--text-muted);
+}
+
+.detail { margin-top: 20px; border-top: 0.5px solid var(--border); padding-top: 20px; }
+.detail h2 { font-size: 16px; font-weight: 500; margin-bottom: 10px; }
+.detail p { font-size: 14px; color: var(--text-muted); line-height: 1.8; }
+
+.sectionTitle { font-size: 16px; font-weight: 500; margin-bottom: 16px; }
+
+.review { padding: 14px 0; border-bottom: 0.5px solid var(--border); }
+.review:last-of-type { border-bottom: none; }
+.reviewHeader { display: flex; align-items: center; gap: 10px; margin-bottom: 6px; }
+.reviewer { font-size: 14px; font-weight: 500; }
+.stars { color: #EF9F27; font-size: 13px; letter-spacing: 1px; }
+.reviewDate { font-size: 12px; color: var(--text-hint); margin-left: auto; }
+.reviewContent { font-size: 14px; color: var(--text-muted); line-height: 1.6; }
