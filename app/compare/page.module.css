@@ -1,0 +1,35 @@
+/* app/compare/page.module.css */
+.wrapper { max-width: 900px; margin: 0 auto; padding: 28px 24px 48px; display: flex; flex-direction: column; gap: 16px; }
+.pageHeader { text-align: center; padding: 4px 0; }
+.pageTitle { font-size: 28px; font-weight: 500; margin-bottom: 8px; }
+.pageSub { font-size: 14px; color: var(--text-muted); }
+.card { background: #fff; border: 0.5px solid var(--border); border-radius: var(--radius-lg); padding: 22px; }
+.compareHeader { display: grid; grid-template-columns: 1fr auto 1fr; gap: 16px; align-items: center; background: #fff; border: 0.5px solid var(--border); border-radius: var(--radius-lg); padding: 28px 24px; }
+.compareHero { text-align: center; }
+.heroIcon { font-size: 40px; margin-bottom: 10px; }
+.heroName { font-size: 20px; font-weight: 500; margin-bottom: 8px; }
+.heroDesc { font-size: 13px; color: var(--text-muted); line-height: 1.6; margin-bottom: 14px; }
+.heroBtn { display: inline-block; padding: 8px 18px; background: var(--text); color: #fff; border-radius: var(--radius-md); font-size: 13px; }
+.heroBtn:hover { background: #333; }
+.vsBadge { font-size: 18px; font-weight: 700; color: var(--text-hint); padding: 0 8px; }
+.tableTitle { font-size: 16px; font-weight: 500; margin-bottom: 14px; }
+.table { width: 100%; border-collapse: collapse; font-size: 14px; }
+.th { padding: 10px 14px; text-align: left; background: #f8f7f4; border-bottom: 0.5px solid var(--border); font-weight: 500; font-size: 13px; }
+.tr:nth-child(even) { background: #fafafa; }
+.tdLabel { padding: 11px 14px; color: var(--text-muted); font-size: 13px; width: 140px; border-bottom: 0.5px solid var(--border); }
+.td { padding: 11px 14px; color: var(--text); border-bottom: 0.5px solid var(--border); }
+.winner { background: #E1F5EE; color: #0F6E56; font-weight: 500; }
+.linkCell { color: #185FA5; }
+.tagCompare { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.tagCol { background: #fff; border: 0.5px solid var(--border); border-radius: var(--radius-lg); padding: 18px; }
+.tagTitle { font-size: 14px; font-weight: 500; margin-bottom: 10px; }
+.tagList { display: flex; gap: 6px; flex-wrap: wrap; }
+.tag { font-size: 12px; padding: 3px 10px; background: #f0efe9; border-radius: 99px; color: var(--text-muted); }
+.noTag { font-size: 13px; color: var(--text-hint); }
+.placeholder { text-align: center; padding: 60px 0; color: var(--text-muted); }
+.placeholderSub { font-size: 13px; color: var(--text-hint); margin-top: 6px; }
+@media (max-width: 600px) {
+  .compareHeader { grid-template-columns: 1fr; }
+  .vsBadge { text-align: center; }
+  .tagCompare { grid-template-columns: 1fr; }
+}
